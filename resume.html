@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mahad Asif - Resume</title>
+<style>
+  @page {
+    size: letter;
+    margin: 0.5in 0.6in;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: Calibri, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 10pt;
+    color: #000;
+    background: #fff;
+    max-width: 8.5in;
+    margin: 0 auto;
+    padding: 0.5in 0.6in;
+    line-height: 1.35;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: #000; text-decoration: none; }
+
+  .contact-line a {
+    color: #2e86c1;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.15s;
+  }
+
+  .contact-line a:hover {
+    color: #1a5276;
+  }
+
+  /* HEADER */
+  .header {
+    text-align: center;
+    padding-bottom: 6px;
+    border-bottom: 1.5px solid #000;
+    margin-bottom: 10px;
+  }
+
+  .header h1 {
+    font-size: 20pt;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #000;
+    margin-bottom: 3px;
+  }
+
+  .header .contact-line {
+    font-size: 8.5pt;
+    color: #000;
+    letter-spacing: 0.2px;
+  }
+
+  .header .contact-line .sep {
+    margin: 0 7px;
+    color: #666;
+  }
+
+  /* SECTIONS */
+  section { margin-bottom: 9px; }
+
+  h2 {
+    font-size: 9.5pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #000;
+    border-bottom: 1px solid #000;
+    padding-bottom: 1px;
+    margin-bottom: 5px;
+  }
+
+  /* SUMMARY */
+  .summary-text {
+    font-size: 10pt;
+    color: #000;
+    line-height: 1.4;
+  }
+
+  /* ENTRIES */
+  .entry { margin-bottom: 6px; }
+  .entry:last-child { margin-bottom: 0; }
+
+  .entry-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .entry-left { font-size: 10pt; }
+  .entry-role { font-weight: 700; }
+  .entry-org { font-style: italic; }
+
+  .entry-right {
+    font-size: 9pt;
+    color: #333;
+    text-align: right;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-left: 12px;
+  }
+
+  .entry-detail {
+    font-size: 9.5pt;
+    color: #333;
+    margin-top: 1px;
+    line-height: 1.35;
+  }
+
+  ul {
+    margin-top: 2px;
+    margin-left: 14px;
+    list-style-type: disc;
+  }
+
+  ul li {
+    font-size: 9.5pt;
+    color: #000;
+    margin-bottom: 1px;
+    line-height: 1.35;
+  }
+
+  ul li strong { font-weight: 700; }
+
+  /* SUB-LABEL */
+  .sub-label {
+    font-weight: 700;
+    font-size: 9.5pt;
+    margin-bottom: 2px;
+    margin-top: 4px;
+  }
+
+  /* SKILLS TABLE */
+  .skills-table { width: 100%; border-collapse: collapse; }
+
+  .skills-table td {
+    font-size: 9.5pt;
+    padding: 1px 0;
+    vertical-align: top;
+    color: #000;
+  }
+
+  .skills-table .label {
+    font-weight: 700;
+    width: 130px;
+    padding-right: 8px;
+  }
+
+  /* PAGE BREAK */
+  .page-break {
+    page-break-before: always;
+  }
+
+  /* PAGE 2 HEADER */
+  .page2-header {
+    font-size: 9pt;
+    color: #555;
+    text-align: right;
+    margin-bottom: 10px;
+    padding-bottom: 3px;
+    border-bottom: 0.5px solid #ccc;
+  }
+
+  /* PAGE FOOTER */
+  .page-footer {
+    font-size: 8.5pt;
+    color: #555;
+    text-align: center;
+    margin-top: auto;
+    padding-top: 8px;
+  }
+
+  .page1-wrap {
+    display: flex;
+    flex-direction: column;
+    min-height: 9.8in;
+  }
+
+  .page1-content {
+    flex: 1;
+  }
+
+  .page2-wrap {
+    display: flex;
+    flex-direction: column;
+    min-height: 9.8in;
+  }
+
+  .page2-content {
+    flex: 1;
+  }
+
+  /* PRINT */
+  @media print {
+    body {
+      padding: 0;
+      max-width: none;
+    }
+    .page1-wrap {
+      min-height: auto;
+    }
+    .page2-wrap {
+      min-height: auto;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================= PAGE 1 -->
+<div class="page1-wrap">
+<div class="page1-content">
+
+<div class="header">
+  <h1>Mahad Asif</h1>
+  <div class="contact-line">
+    <a href="mailto:mahaddevx@gmail.com">mahaddevx@gmail.com</a>
+    <span class="sep">|</span>
+    <a href="tel:+923345938593">+923345938593</a>
+    <span class="sep">|</span>
+    <a href="https://github.com/mahaddev-x" target="_blank">github.com/mahaddev-x</a>
+    <span class="sep">|</span>
+    <a href="https://www.linkedin.com/in/mahadasifdev/" target="_blank">linkedin.com/in/mahadasifdev</a>
+    <span class="sep">|</span>
+    <a href="https://maps.google.com/?q=Rawalpindi,Pakistan" target="_blank">Rawalpindi, Pakistan</a>
+  </div>
+</div>
+
+<!-- ============================================= PROFILE -->
+<section>
+  <h2>Profile</h2>
+  <p class="summary-text">
+    Self-taught developer since age 10. Hired as a professional game developer at 13 and have since worked on 15 commercial products across iOS, Android, PC, Meta Quest VR, and WebGL. At 15, independently conducted cancer genomics research using protein language models, resulting in a first-author paper now under peer review at PLOS ONE. Founded and designed three software products, one co-founded with two partners. All work completed without university affiliation, institutional support, or external funding.
+  </p>
+</section>
+
+<!-- ============================================= EXPERIENCE -->
+<section>
+  <h2>Professional Experience</h2>
+
+  <div class="entry">
+    <div class="entry-row">
+      <div class="entry-left">
+        <span class="entry-role">Game Developer</span>,
+        <span class="entry-org">USquare Solutions</span>
+      </div>
+      <div class="entry-right">Oct 2023 to Jan 2026 (2 yrs 3 mos)</div>
+    </div>
+    <ul>
+      <li>Unity/C# developer across 15 client and in-house products—sole developer on multiple titles, collaborating with teammates on others—building game layers from Figma mockups and integrating Node.js backend APIs.</li>
+      <li>Deployed production applications across five platforms: iOS, Android, Windows, Meta Quest VR, and WebGL via Google Play Console and Apple Developer Program.</li>
+      <li>Integrated Firebase (Realtime Database, Authentication, Cloud Storage), REST APIs, Google Maps SDK, AR Foundation, and in-app purchases across multiple titles.</li>
+      <li>Implemented multilingual support for up to 12 languages across three location-based AR games with real-time 3D maps and GPS-triggered collection mechanics.</li>
+    </ul>
+
+    <div class="sub-label">Key Projects</div>
+    <ul>
+      <li><strong>Mystical Creatures (MyCre)</strong>: Location-based AR game with 7 drop types, AR quizzes, real-time global/private/group chat, avatar customization, user-generated map content, PDF reward system, and a companion web booking platform (mycrebooking.com). Lead developer, ongoing.</li>
+      <li><strong>Poker Hero Go</strong>: Location-based AR game with 3D real-time map, GPS-triggered poker card collection, cryptocurrency reward conversion, and 11-language support.</li>
+      <li><strong>Gift Go</strong>: Location-based AR game enabling companies to drop gifts and coupon codes via admin panel onto a 3D map for user collection. 11-language support.</li>
+      <li><strong>Hednar</strong>: PC/console tower defense with 3-lane AI combat, manually controllable champion unit, elite units with area boosts, wave progression, and custom environment design.</li>
+      <li><strong>Maze Venture</strong>: Multi-character dungeon escape (warrior, doctor, engineer) with Firebase state management, in-app purchases, and procedural level generation.</li>
+      <li><strong>Strength Clan</strong>: Firebase-backed fitness app with real-time leaderboard sync (daily/weekly/monthly/yearly/global), exercise logging, and dynamic resource-driven UI architecture.</li>
+      <li><strong>Arcane Tycoon</strong>: Isometric shop management game with resource gathering, crafting, demand-based pricing, NPC customers, and progressive expansion.</li>
+      <li><strong>Coffee Craze</strong>: Idle tycoon with station management, worker hiring, drive-through service, HR upgrades, and infinite expansion.</li>
+      <li><strong>Convo</strong>: VR and WebGL social forum platform with AI chatbot NPCs, real-time location-based weather and day/night cycles, and threaded Q&amp;A interface.</li>
+      <li><strong>Mars</strong>: VR and WebGL social platform on customizable floating islands with 3D profile spaces, galleries, and social media features.</li>
+      <li><strong>Shops</strong>: VR and WebGL commerce platform enabling 3D product browsing in a futuristic virtual city with user-owned storefronts.</li>
+      <li><strong>Solo Shops</strong>: VR and WebGL standalone virtual store where shop owners customize their space and showcase products for customer browsing.</li>
+      <li><strong>Race Master</strong>: Mobile racing game with thumb-controlled mechanics, NPC opponents, and leaderboard progression.</li>
+      <li><strong>Color Pipe Puzzle</strong>: Puzzle game with procedural levels, colored liquid sorting across pipes of varying sizes, hidden colors, locked pipes, and escalating difficulty.</li>
+      <li><strong>Mouse Cheese Life ISO</strong>: Stealth puzzle game where the player outsmarts cats to collect cheese and rescue a trapped partner. In-app purchases and character skins.</li>
+    </ul>
+  </div>
+</section>
+
+</div><!-- end page1-content -->
+<div class="page-footer">1</div>
+</div><!-- end page1-wrap -->
+
+<!-- ============================================= PAGE 2 -->
+<div class="page-break page2-wrap">
+<div class="page2-header">Mahad Asif | Page 2</div>
+<div class="page2-content">
+
+<section>
+  <h2>Research and Publications</h2>
+
+  <div class="entry">
+    <div class="entry-row">
+      <div class="entry-left">
+        <span class="entry-role">Ensemble AI Screening of 1,211 TP53 Variants of Uncertain Significance via ESM-2 and AlphaMissense</span>
+      </div>
+    </div>
+    <div class="entry-detail"><em>Under peer review, PLOS ONE, 2026</em> &nbsp;|&nbsp; PONE-D-26-07112 &nbsp;|&nbsp; DOI: 10.21203/rs.3.rs-8794996/v1 (Research Square Preprint) &nbsp;|&nbsp; github.com/mahaddev-x/TP53-VUS-Predict</div>
+    <ul>
+      <li>Queried 1,211 TP53 variants of uncertain significance from ClinVar via the NCBI Entrez API and scored each using Meta's ESM-2 protein language model (650M parameters) through zero-shot log-likelihood ratio analysis.</li>
+      <li>Cross-validated against Google DeepMind's AlphaMissense proteome-wide predictions (UniProt P04637), achieving Pearson r = -0.706 and Spearman rho = -0.714 concordance across 1,199 matched variants.</li>
+      <li>Identified 349 high-risk variants by both models and confirmed the top 5 as likely pathogenic through structural analysis on PDB 1TUP using BioPython NeighborSearch.</li>
+      <li>Conducted entirely independently at age 15 with no university affiliation, no supervisor, and no external funding.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================= PERSONAL PROJECTS -->
+<section>
+  <h2>Personal Projects</h2>
+
+  <div class="entry">
+    <div class="entry-row">
+      <div class="entry-left">
+        <span class="entry-role">Rent Out PK</span>
+        <span class="entry-org"> | Founder and Product Designer</span>
+      </div>
+      <div class="entry-right">2025 to 2026 (In Testing)</div>
+    </div>
+    <ul>
+      <li>Conceived and designed a Pakistan-based rental marketplace for all property and vehicle categories. Designed end-to-end in Figma, contracted developers for implementation.</li>
+      <li>Features: host/user/admin dashboards, CNIC and license verification, booking and payment flows, refunds, host bank transfers, chat, notifications, reviews, and blogs.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="entry-row">
+      <div class="entry-left">
+        <span class="entry-role">ResumeTalk AI</span>
+        <span class="entry-org"> | Solo Developer</span>
+      </div>
+      <div class="entry-right">2025 to 2026</div>
+    </div>
+    <ul>
+      <li>Web application where users build professional resumes through conversational AI (voice and text). Guides template selection, generates styled output, and exports to PDF/DOCX. PRO subscription tier.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="entry-row">
+      <div class="entry-left">
+        <span class="entry-role">Twilo</span>
+        <span class="entry-org"> | Founder</span>
+      </div>
+      <div class="entry-right">2026 (Design Phase)</div>
+    </div>
+    <ul>
+      <li>B2B SaaS workforce attendance platform using geofencing and WiFi SSID detection for automatic check-in/out. Planned: real-time tracking, leave management, reports, and AI HR layer.</li>
+    </ul>
+  </div>
+
+</section>
+
+<!-- ============================================= TECHNICAL SKILLS -->
+<section>
+  <h2>Technical Skills</h2>
+  <table class="skills-table">
+    <tr>
+      <td class="label">Languages</td>
+      <td>C#, Python, JavaScript</td>
+    </tr>
+    <tr>
+      <td class="label">Game Dev</td>
+      <td>Unity, AR Foundation, VR (Meta Quest), Location-Based Systems, Google Maps SDK, 3D/2D Maps, Multiplayer, In-App Purchases</td>
+    </tr>
+    <tr>
+      <td class="label">AI and ML</td>
+      <td>PyTorch, HuggingFace Transformers, ESM-2, BioPython, pandas, NumPy, matplotlib, SciPy</td>
+    </tr>
+    <tr>
+      <td class="label">Backend</td>
+      <td>Firebase (Realtime DB, Auth, Storage), Node.js (integration), REST APIs, Postman</td>
+    </tr>
+    <tr>
+      <td class="label">Design</td>
+      <td>Figma, UI/UX Design, Blender (basic)</td>
+    </tr>
+    <tr>
+      <td class="label">Deployment</td>
+      <td>Google Play Console, Apple Developer, iOS, Android, Windows, Meta Quest VR, WebGL</td>
+    </tr>
+  </table>
+</section>
+
+<!-- ============================================= EDUCATION -->
+<section>
+  <h2>Education</h2>
+  <div class="entry">
+    <div class="entry-row">
+      <div class="entry-left">
+        <span class="entry-role">KIPS Preps Academy</span>,
+        <span class="entry-org">Rawalpindi, Pakistan</span>
+      </div>
+      <div class="entry-right">Sep 2025 to Mar 2026</div>
+    </div>
+    <div class="entry-detail">Private FBISE candidate, 9th grade, Computer Science. Federal Board of Intermediate and Secondary Education.</div>
+  </div>
+</section>
+
+</div><!-- end page2-content -->
+<div class="page-footer">2</div>
+</div><!-- end page2-wrap -->
+
+</body>
+</html>
