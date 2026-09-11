@@ -3,410 +3,266 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mahad Asif - Resume</title>
+<title>Mahad Asif Resume</title>
 <style>
-  @page {
-    size: letter;
-    margin: 0.5in 0.6in;
+  @font-face { font-family: 'Season Mix'; src: url('fonts/SeasonMix-TRIAL-Medium.ttf') format('truetype'); font-weight: 500; font-display: block; }
+  @font-face { font-family: 'ABC Diatype'; src: url('fonts/ABCDiatype-Regular-Trial.woff2') format('woff2'); font-weight: 400; font-display: block; }
+  @font-face { font-family: 'ABC Diatype'; src: url('fonts/ABCDiatype-Medium-Trial.woff2') format('woff2'); font-weight: 500; font-display: block; }
+  @font-face { font-family: 'ABC Diatype'; src: url('fonts/ABCDiatype-Bold-Trial.woff2') format('woff2'); font-weight: 700; font-display: block; }
+
+  @page { size: letter; margin: 0.5in 0.7in; }
+
+  :root {
+    --ink: #1b1b1f;
+    --body: #36363c;
+    --muted: #6e6e76;
+    --rule: #e4e1ea;
+    --row: #efedf3;
+    --link: #A78BFA;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   body {
-    font-family: Calibri, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-    font-size: 10pt;
-    color: #000;
-    background: #fff;
-    max-width: 8.5in;
-    margin: 0 auto;
-    padding: 0.5in 0.6in;
-    line-height: 1.35;
-    -webkit-font-smoothing: antialiased;
+    font-family: 'ABC Diatype', 'Segoe UI', Arial, sans-serif;
+    font-size: 9.2pt;
+    line-height: 1.45;
+    color: var(--body);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 
-  a { color: #000; text-decoration: none; }
-
-  .contact-line a {
-    color: #2e86c1;
-    text-decoration: none;
-    font-weight: 600;
-    cursor: pointer;
-    transition: color 0.15s;
+  @media screen {
+    html { background: #eceaf1; }
+    body {
+      max-width: 8.5in;
+      margin: 24px auto;
+      padding: 0.6in 0.7in;
+      background: #fff;
+      box-shadow: 0 2px 14px rgba(0, 0, 0, .12);
+    }
   }
 
-  .contact-line a:hover {
-    color: #1a5276;
+  /* Purple is reserved for links: anything underlined in purple can be clicked. */
+  a {
+    color: inherit;
+    font-weight: inherit;
+    text-decoration: underline;
+    text-decoration-color: var(--link);
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 2.5px;
   }
 
-  /* HEADER */
-  .header {
-    text-align: center;
-    padding-bottom: 6px;
-    border-bottom: 1.5px solid #000;
-    margin-bottom: 10px;
+  a:hover { background: rgba(167, 139, 250, .18); }
+
+  /* ---------- HEADER ---------- */
+  h1 {
+    font-family: 'Season Mix', Georgia, serif;
+    font-weight: 500;
+    font-size: 32pt;
+    line-height: 1;
+    color: var(--ink);
   }
 
-  .header h1 {
-    font-size: 20pt;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: #000;
-    margin-bottom: 3px;
+  .tagline {
+    margin-top: 6px;
+    font-size: 11pt;
+    font-weight: 500;
+    color: var(--ink);
   }
 
-  .header .contact-line {
-    font-size: 8.5pt;
-    color: #000;
-    letter-spacing: 0.2px;
+  .contact {
+    margin-top: 7px;
+    font-size: 8.8pt;
+    color: var(--ink);
   }
 
-  .header .contact-line .sep {
-    margin: 0 7px;
-    color: #666;
-  }
+  .contact span { margin-right: 12px; white-space: nowrap; }
 
-  /* SECTIONS */
-  section { margin-bottom: 9px; }
+  /* ---------- SECTIONS ---------- */
+  section { margin-top: 17px; }
 
   h2 {
-    font-size: 9.5pt;
-    font-weight: 700;
+    font-family: 'Season Mix', Georgia, serif;
+    font-weight: 500;
+    font-size: 15pt;
+    line-height: 1.15;
+    color: var(--ink);
+    padding-bottom: 5px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid var(--rule);
+    break-after: avoid;
+  }
+
+  .summary { font-size: 9.7pt; color: var(--ink); }
+
+  /* ---------- EXPERIENCE ---------- */
+  .job { display: flex; justify-content: space-between; align-items: baseline; }
+  .job-title { font-size: 10.2pt; font-weight: 500; color: var(--ink); }
+  .job-org { font-size: 10.2pt; font-weight: 400; color: var(--ink); }
+  .job-date { font-size: 8.8pt; color: var(--muted); white-space: nowrap; }
+
+  ul { margin: 5px 0 0 15px; }
+  li { margin-bottom: 3px; padding-left: 2px; }
+  li::marker { color: var(--muted); }
+
+  /* ---------- SKILLS ---------- */
+  .skills { display: grid; grid-template-columns: 1.3in 1fr; row-gap: 3px; }
+  .skills dt { font-weight: 500; color: var(--ink); }
+
+  /* ---------- PROJECTS ---------- */
+  .legend { font-size: 8.4pt; color: var(--muted); }
+  .legend b { font-weight: 500; color: var(--ink); }
+
+  h3 {
+    margin: 12px 0 1px;
+    font-size: 7.8pt;
+    font-weight: 500;
+    letter-spacing: 1.2px;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: #000;
-    border-bottom: 1px solid #000;
-    padding-bottom: 1px;
-    margin-bottom: 5px;
+    color: var(--muted);
+    break-after: avoid;
   }
 
-  /* SUMMARY */
-  .summary-text {
-    font-size: 10pt;
-    color: #000;
-    line-height: 1.4;
-  }
-
-  /* ENTRIES */
-  .entry { margin-bottom: 6px; }
-  .entry:last-child { margin-bottom: 0; }
-
-  .entry-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-  }
-
-  .entry-left { font-size: 10pt; }
-  .entry-role { font-weight: 700; }
-  .entry-org { font-style: italic; }
-
-  .entry-right {
+  .row {
+    display: grid;
+    grid-template-columns: 2.05in 1fr 0.45in;
+    column-gap: 0.12in;
+    padding: 2.5px 0;
     font-size: 9pt;
-    color: #333;
-    text-align: right;
-    white-space: nowrap;
-    flex-shrink: 0;
-    margin-left: 12px;
+    border-bottom: 1px solid var(--row);
+    break-inside: avoid;
   }
 
-  .entry-detail {
-    font-size: 9.5pt;
-    color: #333;
-    margin-top: 1px;
-    line-height: 1.35;
+  .p-name { font-weight: 500; color: var(--ink); }
+  .p-desc a { white-space: nowrap; }
+  .p-role { text-align: right; font-size: 8.2pt; color: var(--muted); }
+
+  /* ---------- PHONE LAYOUT (screen only, PDF unaffected) ---------- */
+  @media screen and (max-width: 700px) {
+    body { margin: 0; padding: 28px 16px; box-shadow: none; }
+    h1 { font-size: 28pt; }
+    .contact span { display: inline-block; margin-bottom: 4px; }
+    .job, .item-head { flex-wrap: wrap; column-gap: 12px; }
+    .skills { grid-template-columns: 1fr; row-gap: 0; }
+    .skills dd { margin-bottom: 6px; }
+    .row { grid-template-columns: 1fr auto; row-gap: 2px; padding: 6px 0; }
+    .p-name { grid-column: 1; grid-row: 1; }
+    .p-role { grid-column: 2; grid-row: 1; }
+    .p-desc { grid-column: 1 / -1; }
+    .p-desc a { white-space: normal; }
   }
 
-  ul {
-    margin-top: 2px;
-    margin-left: 14px;
-    list-style-type: disc;
-  }
-
-  ul li {
-    font-size: 9.5pt;
-    color: #000;
-    margin-bottom: 1px;
-    line-height: 1.35;
-  }
-
-  ul li strong { font-weight: 700; }
-
-  /* SUB-LABEL */
-  .sub-label {
-    font-weight: 700;
-    font-size: 9.5pt;
-    margin-bottom: 2px;
-    margin-top: 4px;
-  }
-
-  /* SKILLS TABLE */
-  .skills-table { width: 100%; border-collapse: collapse; }
-
-  .skills-table td {
-    font-size: 9.5pt;
-    padding: 1px 0;
-    vertical-align: top;
-    color: #000;
-  }
-
-  .skills-table .label {
-    font-weight: 700;
-    width: 130px;
-    padding-right: 8px;
-  }
-
-  /* PAGE BREAK */
-  .page-break {
-    page-break-before: always;
-  }
-
-  /* PAGE 2 HEADER */
-  .page2-header {
-    font-size: 9pt;
-    color: #555;
-    text-align: right;
-    margin-bottom: 10px;
-    padding-bottom: 3px;
-    border-bottom: 0.5px solid #ccc;
-  }
-
-  /* PAGE FOOTER */
-  .page-footer {
-    font-size: 8.5pt;
-    color: #555;
-    text-align: center;
-    margin-top: auto;
-    padding-top: 8px;
-  }
-
-  .page1-wrap {
-    display: flex;
-    flex-direction: column;
-    min-height: 9.8in;
-  }
-
-  .page1-content {
-    flex: 1;
-  }
-
-  .page2-wrap {
-    display: flex;
-    flex-direction: column;
-    min-height: 9.8in;
-  }
-
-  .page2-content {
-    flex: 1;
-  }
-
-  /* PRINT */
-  @media print {
-    body {
-      padding: 0;
-      max-width: none;
-    }
-    .page1-wrap {
-      min-height: auto;
-    }
-    .page2-wrap {
-      min-height: auto;
-    }
-  }
+  /* ---------- RESEARCH / EDUCATION ---------- */
+  .item { margin-bottom: 7px; }
+  .item:last-child { margin-bottom: 0; }
+  .item-head { display: flex; justify-content: space-between; align-items: baseline; }
+  .item-name { font-weight: 500; color: var(--ink); }
+  .item-meta { font-size: 8.6pt; color: var(--muted); white-space: nowrap; }
 </style>
 </head>
 <body>
 
-<!-- ============================================= PAGE 1 -->
-<div class="page1-wrap">
-<div class="page1-content">
-
-<div class="header">
+<header>
   <h1>Mahad Asif</h1>
-  <div class="contact-line">
-    <a href="mailto:mahaddevx@gmail.com">mahaddevx@gmail.com</a>
-    <span class="sep">|</span>
-    <a href="tel:+923345938593">+923345938593</a>
-    <span class="sep">|</span>
-    <a href="https://github.com/mahaddev-x" target="_blank">github.com/mahaddev-x</a>
-    <span class="sep">|</span>
-    <a href="https://www.linkedin.com/in/mahadasifdev/" target="_blank">linkedin.com/in/mahadasifdev</a>
-    <span class="sep">|</span>
-    <a href="https://maps.google.com/?q=Rawalpindi,Pakistan" target="_blank">Rawalpindi, Pakistan</a>
+  <div class="tagline">Unity Developer for VR, Mixed Reality and Mobile AR</div>
+  <div class="contact">
+    <span><a href="mailto:mahaddevx@gmail.com" target="_blank" rel="noopener noreferrer">mahaddevx@gmail.com</a></span>
+    <span><a href="tel:+923345938593" target="_blank" rel="noopener noreferrer">+92 334 5938593</a></span>
+    <span><a href="https://www.google.com/maps/search/?api=1&amp;query=Rawalpindi%2C%20Pakistan" target="_blank" rel="noopener noreferrer">Rawalpindi, Pakistan (open to remote)</a></span>
+    <span><a href="https://github.com/mahaddev-x" target="_blank" rel="noopener noreferrer">github.com/mahaddev-x</a></span>
+    <span><a href="https://www.linkedin.com/in/mahadasifdev/" target="_blank" rel="noopener noreferrer">linkedin.com/in/mahadasifdev</a></span>
+    <span><a href="https://drive.google.com/drive/folders/1bF7a2lPBDFV4N-6OGSKFdXex74pH14im" target="_blank" rel="noopener noreferrer">Portfolio</a></span>
   </div>
-</div>
-
-<!-- ============================================= PROFILE -->
-<section>
-  <h2>Profile</h2>
-  <p class="summary-text">
-    Self-taught developer since age 10. Hired as a professional game developer at 13 and have since worked on 15 commercial products across iOS, Android, PC, Meta Quest VR, and WebGL. At 15, independently conducted cancer genomics research using protein language models, resulting in a first-author paper now under peer review at PLOS ONE. Founded and designed three software products, one co-founded with two partners. All work completed without university affiliation, institutional support, or external funding.
-  </p>
-</section>
-
-<!-- ============================================= EXPERIENCE -->
-<section>
-  <h2>Professional Experience</h2>
-
-  <div class="entry">
-    <div class="entry-row">
-      <div class="entry-left">
-        <span class="entry-role">Game Developer</span>,
-        <span class="entry-org">USquare Solutions</span>
-      </div>
-      <div class="entry-right">Oct 2023 to Jan 2026 (2 yrs 3 mos)</div>
-    </div>
-    <ul>
-      <li>Unity/C# developer across 15 client and in-house products—sole developer on multiple titles, collaborating with teammates on others—building game layers from Figma mockups and integrating Node.js backend APIs.</li>
-      <li>Deployed production applications across five platforms: iOS, Android, Windows, Meta Quest VR, and WebGL via Google Play Console and Apple Developer Program.</li>
-      <li>Integrated Firebase (Realtime Database, Authentication, Cloud Storage), REST APIs, Google Maps SDK, AR Foundation, and in-app purchases across multiple titles.</li>
-      <li>Implemented multilingual support for up to 12 languages across three location-based AR games with real-time 3D maps and GPS-triggered collection mechanics.</li>
-    </ul>
-
-    <div class="sub-label">Key Projects</div>
-    <ul>
-      <li><strong>Mystical Creatures (MyCre)</strong>: Location-based AR game with 7 drop types, AR quizzes, real-time global/private/group chat, avatar customization, user-generated map content, PDF reward system, and a companion web booking platform (mycrebooking.com). Lead developer, ongoing.</li>
-      <li><strong>Poker Hero Go</strong>: Location-based AR game with 3D real-time map, GPS-triggered poker card collection, cryptocurrency reward conversion, and 11-language support.</li>
-      <li><strong>Gift Go</strong>: Location-based AR game enabling companies to drop gifts and coupon codes via admin panel onto a 3D map for user collection. 11-language support.</li>
-      <li><strong>Hednar</strong>: PC/console tower defense with 3-lane AI combat, manually controllable champion unit, elite units with area boosts, wave progression, and custom environment design.</li>
-      <li><strong>Maze Venture</strong>: Multi-character dungeon escape (warrior, doctor, engineer) with Firebase state management, in-app purchases, and procedural level generation.</li>
-      <li><strong>Strength Clan</strong>: Firebase-backed fitness app with real-time leaderboard sync (daily/weekly/monthly/yearly/global), exercise logging, and dynamic resource-driven UI architecture.</li>
-      <li><strong>Arcane Tycoon</strong>: Isometric shop management game with resource gathering, crafting, demand-based pricing, NPC customers, and progressive expansion.</li>
-      <li><strong>Coffee Craze</strong>: Idle tycoon with station management, worker hiring, drive-through service, HR upgrades, and infinite expansion.</li>
-      <li><strong>Convo</strong>: VR and WebGL social forum platform with AI chatbot NPCs, real-time location-based weather and day/night cycles, and threaded Q&amp;A interface.</li>
-      <li><strong>Mars</strong>: VR and WebGL social platform on customizable floating islands with 3D profile spaces, galleries, and social media features.</li>
-      <li><strong>Shops</strong>: VR and WebGL commerce platform enabling 3D product browsing in a futuristic virtual city with user-owned storefronts.</li>
-      <li><strong>Solo Shops</strong>: VR and WebGL standalone virtual store where shop owners customize their space and showcase products for customer browsing.</li>
-      <li><strong>Race Master</strong>: Mobile racing game with thumb-controlled mechanics, NPC opponents, and leaderboard progression.</li>
-      <li><strong>Color Pipe Puzzle</strong>: Puzzle game with procedural levels, colored liquid sorting across pipes of varying sizes, hidden colors, locked pipes, and escalating difficulty.</li>
-      <li><strong>Mouse Cheese Life ISO</strong>: Stealth puzzle game where the player outsmarts cats to collect cheese and rescue a trapped partner. In-app purchases and character skins.</li>
-    </ul>
-  </div>
-</section>
-
-</div><!-- end page1-content -->
-<div class="page-footer">1</div>
-</div><!-- end page1-wrap -->
-
-<!-- ============================================= PAGE 2 -->
-<div class="page-break page2-wrap">
-<div class="page2-header">Mahad Asif | Page 2</div>
-<div class="page2-content">
+</header>
 
 <section>
-  <h2>Research and Publications</h2>
-
-  <div class="entry">
-    <div class="entry-row">
-      <div class="entry-left">
-        <span class="entry-role">Ensemble AI Screening of 1,211 TP53 Variants of Uncertain Significance via ESM-2 and AlphaMissense</span>
-      </div>
-    </div>
-    <div class="entry-detail"><em>Under peer review, PLOS ONE, 2026</em> &nbsp;|&nbsp; PONE-D-26-07112 &nbsp;|&nbsp; DOI: 10.21203/rs.3.rs-8794996/v1 (Research Square Preprint) &nbsp;|&nbsp; github.com/mahaddev-x/TP53-VUS-Predict</div>
-    <ul>
-      <li>Queried 1,211 TP53 variants of uncertain significance from ClinVar via the NCBI Entrez API and scored each using Meta's ESM-2 protein language model (650M parameters) through zero-shot log-likelihood ratio analysis.</li>
-      <li>Cross-validated against Google DeepMind's AlphaMissense proteome-wide predictions (UniProt P04637), achieving Pearson r = -0.706 and Spearman rho = -0.714 concordance across 1,199 matched variants.</li>
-      <li>Identified 349 high-risk variants by both models and confirmed the top 5 as likely pathogenic through structural analysis on PDB 1TUP using BioPython NeighborSearch.</li>
-      <li>Conducted entirely independently at age 15 with no university affiliation, no supervisor, and no external funding.</li>
-    </ul>
+  <h2>Experience</h2>
+  <div class="job">
+    <div><span class="job-title">Game Developer</span>, <span class="job-org">Quantum Edge LLC</span></div>
+    <div class="job-date">Oct 2023 to Jan 2026</div>
   </div>
+  <ul>
+    <li>36 Unity projects: 17 VR and mixed reality, 9 mobile AR, 10 mobile and PC games.</li>
+    <li>Built 18 solo and 18 with other Unity developers, in teams of 3 to 5.</li>
+    <li>7 titles live on the Meta Quest Store, App Store, Google Play and itch.io.</li>
+  </ul>
 </section>
 
-<!-- ============================================= PERSONAL PROJECTS -->
 <section>
-  <h2>Personal Projects</h2>
-
-  <div class="entry">
-    <div class="entry-row">
-      <div class="entry-left">
-        <span class="entry-role">Rent Out PK</span>
-        <span class="entry-org"> | Founder and Product Designer</span>
-      </div>
-      <div class="entry-right">2025 to 2026 (In Testing)</div>
-    </div>
-    <ul>
-      <li>Conceived and designed a Pakistan-based rental marketplace for all property and vehicle categories. Designed end-to-end in Figma, contracted developers for implementation.</li>
-      <li>Features: host/user/admin dashboards, CNIC and license verification, booking and payment flows, refunds, host bank transfers, chat, notifications, reviews, and blogs.</li>
-    </ul>
-  </div>
-
-  <div class="entry">
-    <div class="entry-row">
-      <div class="entry-left">
-        <span class="entry-role">ResumeTalk AI</span>
-        <span class="entry-org"> | Solo Developer</span>
-      </div>
-      <div class="entry-right">2025 to 2026</div>
-    </div>
-    <ul>
-      <li>Web application where users build professional resumes through conversational AI (voice and text). Guides template selection, generates styled output, and exports to PDF/DOCX. PRO subscription tier.</li>
-    </ul>
-  </div>
-
-  <div class="entry">
-    <div class="entry-row">
-      <div class="entry-left">
-        <span class="entry-role">Twilo</span>
-        <span class="entry-org"> | Founder</span>
-      </div>
-      <div class="entry-right">2026 (Design Phase)</div>
-    </div>
-    <ul>
-      <li>B2B SaaS workforce attendance platform using geofencing and WiFi SSID detection for automatic check-in/out. Planned: real-time tracking, leave management, reports, and AI HR layer.</li>
-    </ul>
-  </div>
-
+  <h2>Skills</h2>
+  <dl class="skills">
+    <dt>Engine</dt><dd>Unity, C#, Addressables, physics, multiplayer, procedural level generation</dd>
+    <dt>XR</dt><dd>Meta Quest, passthrough mixed reality, hand tracking, AR Foundation, WebGL</dd>
+    <dt>Maps and location</dt><dd>Google Maps SDK, Mapbox, GPS-based gameplay</dd>
+    <dt>Backend</dt><dd>Firebase (Authentication, Realtime Database, Storage), REST APIs, Node.js API integration</dd>
+    <dt>Release</dt><dd>Meta Quest Store, App Store, Google Play, in-app purchases, localization (up to 12 languages)</dd>
+    <dt>Tools</dt><dd>Git, Figma, Blender (basic), Python</dd>
+  </dl>
 </section>
 
-<!-- ============================================= TECHNICAL SKILLS -->
 <section>
-  <h2>Technical Skills</h2>
-  <table class="skills-table">
-    <tr>
-      <td class="label">Languages</td>
-      <td>C#, Python, JavaScript</td>
-    </tr>
-    <tr>
-      <td class="label">Game Dev</td>
-      <td>Unity, AR Foundation, VR (Meta Quest), Location-Based Systems, Google Maps SDK, 3D/2D Maps, Multiplayer, In-App Purchases</td>
-    </tr>
-    <tr>
-      <td class="label">AI and ML</td>
-      <td>PyTorch, HuggingFace Transformers, ESM-2, BioPython, pandas, NumPy, matplotlib, SciPy</td>
-    </tr>
-    <tr>
-      <td class="label">Backend</td>
-      <td>Firebase (Realtime DB, Auth, Storage), Node.js (integration), REST APIs, Postman</td>
-    </tr>
-    <tr>
-      <td class="label">Design</td>
-      <td>Figma, UI/UX Design, Blender (basic)</td>
-    </tr>
-    <tr>
-      <td class="label">Deployment</td>
-      <td>Google Play Console, Apple Developer, iOS, Android, Windows, Meta Quest VR, WebGL</td>
-    </tr>
-  </table>
+  <h2>Projects at Quantum Edge LLC</h2>
+  <p class="legend"><b>Solo</b>: only Unity developer, with 3D models, UI/UX and backend from teammates. <b>Co-dev</b>: built with other Unity developers.</p>
+
+  <h3>VR and Mixed Reality (17)</h3>
+  <div class="row"><div class="p-name">Nexus Arcade</div><div class="p-desc">Mixed reality arcade with desk bowling, hand-tracked kart racing, a shooting range and boxing. <a href="https://www.meta.com/en-gb/experiences/nexus-arcade-in-mixed-reality/6962116033836064/" target="_blank" rel="noopener noreferrer">Meta Quest Store</a>, <a href="https://drive.google.com/drive/folders/1c6DiGRZd38b_k1bzmvgRnjo__oUvwp6X" target="_blank" rel="noopener noreferrer">Videos</a></div><div class="p-role">Co-dev</div></div>
+  <div class="row"><div class="p-name">VR Runner</div><div class="p-desc">Runner on floating islands with coins, health and waves. <a href="https://drive.google.com/drive/folders/1mePHf0kDMmq59ZaeGCPjszRKhqEhrj8Z" target="_blank" rel="noopener noreferrer">Videos</a></div><div class="p-role">Solo</div></div>
+  <div class="row"><div class="p-name">Pharaoh's Vault Escape Room</div><div class="p-desc">Egyptian tomb escape room. <a href="https://www.meta.com/en-gb/experiences/pharaohs-vault-escape-room/1129026526966891/" target="_blank" rel="noopener noreferrer">Meta Quest Store</a>, <a href="https://saltysharks.itch.io/pharaohs-vault-escape-room" target="_blank" rel="noopener noreferrer">itch.io</a>, <a href="https://drive.google.com/drive/folders/1iOA-ZhNkRAHRl-BT0VcALs26q8MUDtZ7" target="_blank" rel="noopener noreferrer">Videos</a></div><div class="p-role">Co-dev</div></div>
+  <div class="row"><div class="p-name">CBRN Hazmat Training</div><div class="p-desc">Hazmat training with radiation monitoring and sampling. <a href="https://drive.google.com/drive/folders/1H21sLILvztOgqtcSq6tIUmdBm9SQ8x-R" target="_blank" rel="noopener noreferrer">Videos</a></div><div class="p-role">Solo</div></div>
+  <div class="row"><div class="p-name">Medical VR</div><div class="p-desc">Operating room with an anatomy table and surgical instruments. <a href="https://drive.google.com/drive/folders/1PyyG3l64WRcjq5suhVl1-xuIsrd5DozH" target="_blank" rel="noopener noreferrer">Videos</a></div><div class="p-role">Solo</div></div>
+  <div class="row"><div class="p-name">Industrial Training VR</div><div class="p-desc">Multiplayer induction motor strip-down and rebuild training. <a href="https://drive.google.com/drive/folders/1SgtTglJb0eKlpHMmFM5H5W10c7tFnjSw" target="_blank" rel="noopener noreferrer">Videos</a></div><div class="p-role">Solo</div></div>
+  <div class="row"><div class="p-name">Real Estate VR</div><div class="p-desc">Property walkthrough with a live facade color picker. <a href="https://drive.google.com/drive/folders/1PbFwIlm6i4eLfH-ry45ljf3qinUd9HGW" target="_blank" rel="noopener noreferrer">Videos</a></div><div class="p-role">Solo</div></div>
+  <div class="row"><div class="p-name">VR Interaction Systems</div><div class="p-desc">Physics sandbox with climbing, levers, doors, ragdolls and weapons. <a href="https://drive.google.com/drive/folders/10bCyIZ4qubdUuapkwioUzQX6rePZq2Tw" target="_blank" rel="noopener noreferrer">Videos</a></div><div class="p-role">Solo</div></div>
+  <div class="row"><div class="p-name">Convo</div><div class="p-desc">VR and WebGL social forum with AI chatbot NPCs. <a href="https://drive.google.com/drive/folders/18BTwEDXXGD54Q-PKMHm8sU1AA5TYAMYg" target="_blank" rel="noopener noreferrer">Videos</a></div><div class="p-role">Co-dev</div></div>
+  <div class="row"><div class="p-name">Mars</div><div class="p-desc">VR and WebGL social platform with 3D profiles and galleries.</div><div class="p-role">Co-dev</div></div>
+  <div class="row"><div class="p-name">Shops</div><div class="p-desc">VR and WebGL virtual city of user-owned 3D storefronts.</div><div class="p-role">Co-dev</div></div>
+  <div class="row"><div class="p-name">Solo Shops</div><div class="p-desc">Standalone VR and WebGL store that owners customize.</div><div class="p-role">Co-dev</div></div>
+  <div class="row"><div class="p-name">VR Cinema</div><div class="p-desc">Streams a PC desktop to the headset over LAN. <a href="https://drive.google.com/drive/folders/1vWM5dAYSgd22elQDNlcB3_9Pn4ZiAf0I" target="_blank" rel="noopener noreferrer">Videos</a></div><div class="p-role">Solo</div></div>
+  <div class="row"><div class="p-name">VR EBooks</div><div class="p-desc">E-book store with office, library and lecture hall rooms. <a href="https://drive.google.com/drive/folders/1L98kd0gwMelQUUNpXbfnVApwmAwgmpOf" target="_blank" rel="noopener noreferrer">Videos</a></div><div class="p-role">Co-dev</div></div>
+  <div class="row"><div class="p-name">The Violet Flame Experience</div><div class="p-desc">Guided meditation across 12 scenes. <a href="https://www.meta.com/en-gb/experiences/violet-flame-experience/6738439822877580/" target="_blank" rel="noopener noreferrer">Meta Quest Store</a>, <a href="https://drive.google.com/drive/folders/1rswr59kPhuyvRoy03HppHx61Ttn20VyV" target="_blank" rel="noopener noreferrer">Videos</a></div><div class="p-role">Co-dev</div></div>
+  <div class="row"><div class="p-name">Mindful Moments: Forest Retreat</div><div class="p-desc">Forest relaxation space with time of day control. <a href="https://www.meta.com/en-gb/experiences/mindful-moments/24210209858630331/" target="_blank" rel="noopener noreferrer">Meta Quest Store</a>, <a href="https://drive.google.com/drive/folders/1_-GTiZCrIsfJ6yi4saxUTCN6YgnIgQiW" target="_blank" rel="noopener noreferrer">Videos</a></div><div class="p-role">Co-dev</div></div>
+  <div class="row"><div class="p-name">Mindful Moments: Immersive Reef</div><div class="p-desc">Underwater reef with fish, coral and dolphins. <a href="https://drive.google.com/drive/folders/1xZAAO5HWiLSJlGgHatauJObzcbWNVqAe" target="_blank" rel="noopener noreferrer">Videos</a></div><div class="p-role">Co-dev</div></div>
+
+  <h3>Mobile AR (9)</h3>
+  <div class="row"><div class="p-name">Mystic Creatures (MyCre)</div><div class="p-desc">Location-based AR game: solve quizzes at real places to collect creatures, with friends, groups and chat. <a href="https://apps.apple.com/us/app/mycre-adventures/id6717614238" target="_blank" rel="noopener noreferrer">App Store</a>, <a href="https://drive.google.com/drive/folders/18kvlS8PMZxE9ju1IMD0hdPL44hAqfT0S" target="_blank" rel="noopener noreferrer">Videos</a></div><div class="p-role">Solo</div></div>
+  <div class="row"><div class="p-name">Poker Hero Go</div><div class="p-desc">Collect poker cards in AR at GPS spots for crypto rewards.</div><div class="p-role">Solo</div></div>
+  <div class="row"><div class="p-name">Gift Go</div><div class="p-desc">Brands drop gifts and coupons on a 3D map to collect in AR.</div><div class="p-role">Solo</div></div>
+  <div class="row"><div class="p-name">Step Token</div><div class="p-desc">3D Mapbox city with an avatar, GPS treasure and AR drops. <a href="https://drive.google.com/drive/folders/1UnPDjPbQiVtkh-EMTEVr_bFNTNQr6_w4" target="_blank" rel="noopener noreferrer">Videos</a></div><div class="p-role">Co-dev</div></div>
+  <div class="row"><div class="p-name">Parks ID</div><div class="p-desc">3D park map with AR billboards, collectibles and quizzes. <a href="https://drive.google.com/drive/folders/1EAzG2-kLOKZMDCyabVuJdFPFzkHuu-3q" target="_blank" rel="noopener noreferrer">Videos</a></div><div class="p-role">Co-dev</div></div>
+  <div class="row"><div class="p-name">AR Card Scanner</div><div class="p-desc">Scan a playing card to bring a 3D character to life. <a href="https://drive.google.com/drive/folders/1ZkDbWXtO_lyE3Hr8rONwtl17LGVmfE_4" target="_blank" rel="noopener noreferrer">Videos</a></div><div class="p-role">Solo</div></div>
+  <div class="row"><div class="p-name">AR Portal</div><div class="p-desc">Walk through a portal placed outdoors into a desert and tomb. <a href="https://drive.google.com/drive/folders/1a0LDJWNbptEjnCkvTmuK1tZw-AsGGM2n" target="_blank" rel="noopener noreferrer">Videos</a></div><div class="p-role">Solo</div></div>
+  <div class="row"><div class="p-name">PIKO</div><div class="p-desc">Avatar customizer, 3D street map and AR model placement. <a href="https://drive.google.com/drive/folders/1UrHPeOCjXZDoT4sZ9hy0noFA-Am3Crv8" target="_blank" rel="noopener noreferrer">Videos</a></div><div class="p-role">Co-dev</div></div>
+  <div class="row"><div class="p-name">AR Screens</div><div class="p-desc">Place web browser screens around you in AR from your phone.</div><div class="p-role">Solo</div></div>
+
+  <h3>Mobile and PC Games (10)</h3>
+  <div class="row"><div class="p-name">Hednar</div><div class="p-desc">PC and mobile 3-lane tower defense with a controllable champion.</div><div class="p-role">Co-dev</div></div>
+  <div class="row"><div class="p-name">Strength Clan</div><div class="p-desc">Fitness app with clans and live leaderboards. <a href="https://play.google.com/store/apps/details?id=com.strengthclan.fitness" target="_blank" rel="noopener noreferrer">Google Play</a>, <a href="https://apps.apple.com/rs/app/strength-clan-fitness-tracker/id6746098077" target="_blank" rel="noopener noreferrer">App Store</a>, <a href="https://drive.google.com/drive/folders/1lbEDF4rjgA28XRKbtQ46Q0VTOnum9oan" target="_blank" rel="noopener noreferrer">Videos</a></div><div class="p-role">Solo</div></div>
+  <div class="row"><div class="p-name">Race Master</div><div class="p-desc">Mobile racing with thumb controls, NPC opponents and leaderboards.</div><div class="p-role">Co-dev</div></div>
+  <div class="row"><div class="p-name">Color Pipe Puzzle</div><div class="p-desc">Liquid color sorting with procedural levels and locked pipes. <a href="https://drive.google.com/drive/folders/1xIN6xv_lKY3JgYnmYEPn2-MAJkGDPega" target="_blank" rel="noopener noreferrer">Videos</a></div><div class="p-role">Co-dev</div></div>
+  <div class="row"><div class="p-name">Mouse Life Cheese</div><div class="p-desc">Stealth puzzle: outsmart cats, collect cheese, rescue a partner.</div><div class="p-role">Solo</div></div>
+  <div class="row"><div class="p-name">Maze Venture</div><div class="p-desc">Dungeon escape with 3 characters, procedural levels and Firebase. <a href="https://drive.google.com/drive/folders/1J95gDSO2y6ZRyT7VCi_Rp5TtgGM3yaCp" target="_blank" rel="noopener noreferrer">Videos</a></div><div class="p-role">Co-dev</div></div>
+  <div class="row"><div class="p-name">Revolving Maze</div><div class="p-desc">Rotate the maze in 90 degree steps to roll a cube to the exit. Mazes grow from 2x2 upward, with speedrun leaderboards to level 10.</div><div class="p-role">Solo</div></div>
+  <div class="row"><div class="p-name">Arcane Tycoon</div><div class="p-desc">Isometric shop sim with crafting and demand-based pricing.</div><div class="p-role">Solo</div></div>
+  <div class="row"><div class="p-name">Coffee Craze</div><div class="p-desc">Idle tycoon with stations, worker hiring, a drive-thru and expansion. <a href="https://drive.google.com/drive/folders/112Osmmhwf7lOJ0JyAOhjFU-c73tRfWkB" target="_blank" rel="noopener noreferrer">Videos</a></div><div class="p-role">Co-dev</div></div>
+  <div class="row"><div class="p-name">Logic Escape</div><div class="p-desc">Escape a lava world while an AI monster blocks your path. <a href="https://apps.apple.com/pk/app/logic-escape/id6761766461" target="_blank" rel="noopener noreferrer">App Store</a></div><div class="p-role">Solo</div></div>
 </section>
 
-<!-- ============================================= EDUCATION -->
 <section>
-  <h2>Education</h2>
-  <div class="entry">
-    <div class="entry-row">
-      <div class="entry-left">
-        <span class="entry-role">KIPS Preps Academy</span>,
-        <span class="entry-org">Rawalpindi, Pakistan</span>
-      </div>
-      <div class="entry-right">Sep 2025 to Mar 2026</div>
-    </div>
-    <div class="entry-detail">Private FBISE candidate, 9th grade, Computer Science. Federal Board of Intermediate and Secondary Education.</div>
+  <h2>Research and Education</h2>
+  <div class="item">
+    <div class="item-head"><span class="item-name">First-author paper, under peer review at PLOS ONE</span><span class="item-meta">2026</span></div>
+    <div>AI screening of 1,211 TP53 cancer variants using ESM-2 and AlphaMissense. <a href="https://github.com/mahaddev-x/TP53-VUS-Predict" target="_blank" rel="noopener noreferrer">GitHub</a></div>
+  </div>
+  <div class="item">
+    <div class="item-head"><span class="item-name">Founder projects</span><span class="item-meta">2025 to 2026</span></div>
+    <div>RentOut PK, rental marketplace (founder and product designer). ResumeTalk AI (solo developer).</div>
+  </div>
+  <div class="item">
+    <div class="item-head"><span class="item-name">KIPS Preps Academy, Rawalpindi</span><span class="item-meta">Sep 2025 to Mar 2026</span></div>
+    <div>Private FBISE candidate, Computer Science</div>
   </div>
 </section>
-
-</div><!-- end page2-content -->
-<div class="page-footer">2</div>
-</div><!-- end page2-wrap -->
 
 </body>
 </html>
