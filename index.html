@@ -10,15 +10,16 @@
   @font-face { font-family: 'ABC Diatype'; src: url('fonts/ABCDiatype-Medium-Trial.woff2') format('woff2'); font-weight: 500; font-display: block; }
   @font-face { font-family: 'ABC Diatype'; src: url('fonts/ABCDiatype-Bold-Trial.woff2') format('woff2'); font-weight: 700; font-display: block; }
 
-  @page { size: letter; margin: 0.5in 0.7in; }
+  @page { size: letter; margin: 0; }
 
   :root {
-    --ink: #1b1b1f;
-    --body: #36363c;
+    --ink: #111111;
+    --body: #111111;
     --muted: #6e6e76;
     --rule: #e4e1ea;
     --row: #efedf3;
     --link: #A78BFA;
+    --paper: #FFFAFA;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -32,15 +33,28 @@
     print-color-adjust: exact;
   }
 
+  /* Two letter-size sheets: the same page split is used on screen and in the PDF. */
+  .page {
+    width: 8.5in;
+    height: 11in;
+    padding: 0.5in 0.7in;
+    background: var(--paper);
+    overflow: hidden;
+  }
+
+  .page > section:first-child { margin-top: 0; }
+  .page > section:first-child > h3:first-child { margin-top: 0; }
+
   @media screen {
-    html { background: #eceaf1; }
-    body {
-      max-width: 8.5in;
-      margin: 24px auto;
-      padding: 0.6in 0.7in;
-      background: #fff;
-      box-shadow: 0 2px 14px rgba(0, 0, 0, .12);
-    }
+    html { background: #e6e1e1; }
+    body { padding: 24px 0; }
+    .page { margin: 0 auto 24px; box-shadow: 0 2px 14px rgba(0, 0, 0, .12); }
+  }
+
+  @media print {
+    html, body { background: var(--paper); }
+    .page { break-after: page; }
+    .page:last-child { break-after: auto; }
   }
 
   /* Purple is reserved for links: anything underlined in purple can be clicked. */
@@ -139,8 +153,11 @@
   .p-role { text-align: right; font-size: 8.2pt; color: var(--muted); }
 
   /* ---------- PHONE LAYOUT (screen only, PDF unaffected) ---------- */
-  @media screen and (max-width: 700px) {
-    body { margin: 0; padding: 28px 16px; box-shadow: none; }
+  @media screen and (max-width: 860px) {
+    html { background: var(--paper); }
+    body { padding: 0; }
+    .page { width: auto; height: auto; overflow: visible; margin: 0; padding: 28px 16px; box-shadow: none; }
+    .page + .page { padding-top: 0; }
     h1 { font-size: 28pt; }
     .contact span { display: inline-block; margin-bottom: 4px; }
     .job, .item-head { flex-wrap: wrap; column-gap: 12px; }
@@ -162,6 +179,8 @@
 </style>
 </head>
 <body>
+
+<div class="page">
 
 <header>
   <h1>Mahad Asif</h1>
@@ -224,6 +243,11 @@
   <div class="row"><div class="p-name">Mindful Moments: Forest Retreat</div><div class="p-desc">Forest relaxation space with time of day control. <a href="https://www.meta.com/en-gb/experiences/mindful-moments/24210209858630331/" target="_blank" rel="noopener noreferrer">Meta Quest Store</a>, <a href="https://drive.google.com/drive/folders/1_-GTiZCrIsfJ6yi4saxUTCN6YgnIgQiW" target="_blank" rel="noopener noreferrer">Videos</a></div><div class="p-role">Co-dev</div></div>
   <div class="row"><div class="p-name">Mindful Moments: Immersive Reef</div><div class="p-desc">Underwater reef with fish, coral and dolphins. <a href="https://drive.google.com/drive/folders/1xZAAO5HWiLSJlGgHatauJObzcbWNVqAe" target="_blank" rel="noopener noreferrer">Videos</a></div><div class="p-role">Co-dev</div></div>
 
+</section>
+</div>
+
+<div class="page">
+<section>
   <h3>Mobile AR (9)</h3>
   <div class="row"><div class="p-name">Mystic Creatures (MyCre)</div><div class="p-desc">Location-based AR game: solve quizzes at real places to collect creatures, with friends, groups and chat. <a href="https://apps.apple.com/us/app/mycre-adventures/id6717614238" target="_blank" rel="noopener noreferrer">App Store</a>, <a href="https://drive.google.com/drive/folders/18kvlS8PMZxE9ju1IMD0hdPL44hAqfT0S" target="_blank" rel="noopener noreferrer">Videos</a></div><div class="p-role">Solo</div></div>
   <div class="row"><div class="p-name">Poker Hero Go</div><div class="p-desc">Collect poker cards in AR at GPS spots for crypto rewards.</div><div class="p-role">Solo</div></div>
@@ -263,6 +287,8 @@
     <div>Private FBISE candidate, Computer Science</div>
   </div>
 </section>
+
+</div>
 
 </body>
 </html>
